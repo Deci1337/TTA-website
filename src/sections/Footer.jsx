@@ -1,17 +1,21 @@
+import { useLang } from "../context/LangContext";
+
 export function Footer() {
+  const { t } = useLang();
   return (
     <footer className="relative border-t border-white/10 bg-[#0a0a0a] py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h3 className="text-xl font-bold text-white mb-4 gradient-text">TikTok Agent</h3>
+            <h3 className="text-xl font-bold text-white mb-1 gradient-text">TikTok Agent</h3>
+            <p className="text-white text-xs mb-2">{t("footer.credits")}</p>
             <p className="text-white/60 text-sm">
-              TikTok automation with artificial intelligence
+              {t("footer.tagline")}
             </p>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Developers</h4>
+            <h4 className="text-white font-semibold mb-4">{t("footer.developers")}</h4>
             <div className="flex flex-col gap-3">
               <div>
                 <a
@@ -65,25 +69,21 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Links</h4>
-            <div className="flex flex-col gap-3">
-              <a href="#download" className="text-white/60 hover:text-white transition-colors">
-                Download
-              </a>
-              <a href="https://github.com/Deci1337" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
-                Source Code
-              </a>
-            </div>
+            <h4 className="text-white font-semibold mb-4">{t("footer.links")}</h4>
+            <a href="#download" className="text-white/60 hover:text-white transition-colors">
+              {t("footer.download")}
+            </a>
           </div>
 
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="text-sm text-white/40">
-            © 2026 TikTok Agent. Open source under MIT license
+            {t("footer.copyright")}
           </div>
-          <div className="text-sm text-white/40">
-            v1.0.0 Beta
+          <div className="text-sm text-white/40 text-right">
+            <div>{t("footer.version")}</div>
+            <div className="text-xs mt-0.5">{t("footer.versionBy")}</div>
           </div>
         </div>
       </div>

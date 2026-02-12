@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
+import { useLang } from "../context/LangContext";
 
 export function Screenshots() {
+  const { t } = useLang();
   const screenshots = [
     { id: 1, src: '/screenshots/screen-1.jpg' },
     { id: 2, src: '/screenshots/screen-2.jpg' },
@@ -30,8 +32,8 @@ export function Screenshots() {
   return (
     <section ref={sectionRef} className="relative py-20 px-6">
       <div className="mb-16 text-center">
-        <h2 className="text-3xl font-bold text-white">Screenshots</h2>
-        <p className="mt-2 text-white/60">Take a look at the app interface</p>
+        <h2 className="text-3xl font-bold text-white">{t("screenshots.title")}</h2>
+        <p className="mt-2 text-white/60">{t("screenshots.subtitle")}</p>
       </div>
       
       <div className="flex flex-col md:flex-row gap-8 max-w-7xl mx-auto items-center justify-center">
